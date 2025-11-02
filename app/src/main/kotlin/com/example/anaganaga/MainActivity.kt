@@ -3,7 +3,7 @@ package com.example.anaganaga
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import ui.MainScreen
+import com.example.anaganaga.ui.SplashScreen
 import ui.theme.AnaganagaTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AnaganagaTheme {
-                MainScreen()
+                SplashScreen()
             }
         }
     }

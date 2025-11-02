@@ -12,6 +12,15 @@
             </PendingDiffInfo>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_clock.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/drawable/ic_clock.xml" />
+              <option name="originalContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:width=&quot;24dp&quot;&#10;    android:height=&quot;24dp&quot;&#10;    android:viewportWidth=&quot;24&quot;&#10;    android:viewportHeight=&quot;24&quot;&gt;&#10;    &lt;path&#10;        android:fillColor=&quot;#000000&quot;&#10;        android:pathData=&quot;M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2ZM12,20A8,8 0 1,1 20,12A8,8 0 0,1 12,20ZM13,7H11V13H16V11H13V7Z&quot;/&gt;&#10;&lt;/vector&gt;&#10;&#10;" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:width=&quot;24dp&quot;&#10;    android:height=&quot;24dp&quot;&#10;    android:viewportWidth=&quot;24&quot;&#10;    android:viewportHeight=&quot;24&quot;&gt;&#10;    &lt;path&#10;        android:fillColor=&quot;#FFFFFF&quot;&#10;        android:pathData=&quot;M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2ZM12,20A8,8 0 1,1 20,12A8,8 0 0,1 12,20ZM13,7H11V13H16V11H13V7Z&quot;/&gt;&#10;&lt;/vector&gt;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
