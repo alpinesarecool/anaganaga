@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.21"
-    id("com.apollographql.apollo3").version("3.8.2")
+    id("com.apollographql.apollo3") version "3.8.2"
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -36,6 +36,11 @@ android {
         compose = true
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -43,6 +48,13 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Use JVM Toolchain for Java
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
         }
     }
 }
@@ -59,6 +71,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.activity:activity-compose")
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.4")
 
     // Hilt (DI)
     implementation("com.google.dagger:hilt-android:2.52")
@@ -85,4 +99,3 @@ apollo {
         generateKotlinModels.set(true)
     }
 }
-
