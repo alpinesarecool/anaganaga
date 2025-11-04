@@ -1,5 +1,6 @@
 package com.example.anaganaga.data.repository
 
+import android.util.Log
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.exception.ApolloException
 import com.example.anaganaga.LoginMutation
@@ -25,6 +26,10 @@ class AuthRepository(private val apolloClient: ApolloClient) {
                 errors = errors
             )
         } catch (e: ApolloException) {
+            Log.e("AuthRepository", "ApolloException: ${e.message}", e)
+            LoginResult(success = false, token = null, errors = listOf(e.message ?: "Unknown error"))
+        } catch (e: Exception) {
+            Log.e("AuthRepository", "Network/Other Exception: ${e.message}", e)
             LoginResult(success = false, token = null, errors = listOf(e.message ?: "Unknown error"))
         }
     }

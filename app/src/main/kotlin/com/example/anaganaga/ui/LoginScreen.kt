@@ -16,15 +16,17 @@ import com.example.anaganaga.data.repository.AuthRepository
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.anaganaga.presentation.viewmodel.LoginViewModel
 import com.example.anaganaga.presentation.viewmodel.LoginViewModelFactory
+import androidx.navigation.NavController
+import androidx.compose.runtime.LaunchedEffect
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
     val apolloClient = remember {
         ApolloClient.Builder()
-            .serverUrl("https://your-backend-url.com/graphql")
+            .serverUrl("http://10.0.2.2:3000/graphql") // Use this for Android emulator
             .build()
     }
     val repository = remember { AuthRepository(apolloClient) }
@@ -34,6 +36,14 @@ fun LoginScreen() {
     val loading by viewModel.loading.collectAsState()
     val loginSuccess by viewModel.loginSuccess.collectAsState()
     val loginErrors by viewModel.loginErrors.collectAsState()
+
+    LaunchedEffect(loginSuccess) {
+        if (loginSuccess == true) {
+            navController.navigate("dashboard") {
+                popUpTo("login") { inclusive = true }
+            }
+        }
+    }
 
     Box(
         modifier = Modifier
